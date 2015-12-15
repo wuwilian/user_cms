@@ -1,5 +1,7 @@
 package com.lm.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -64,6 +66,31 @@ public class UserController {
     @RequestMapping("/goto")
     public String gotodemo(HttpServletRequest request) {
     	return "page-login";
+    }
+    
+    @RequestMapping("/login")
+    public String userLogin(HttpServletRequest request, ModelMap model) {
+    	String userName = request.getParameter("user_name");
+    	String password = request.getParameter("password");
+    	
+    	UserEntity user = new UserEntity();
+    	user.setUserName(userName);
+    	user.setPassword(password);
+    	
+    	user = userServiceImpl.getUserByNameAndPassword(user);
+    	model.put("user", user);
+    	if(user != null) {
+    		return "index";
+    	}
+    	return "page-login";
+    }
+    
+    public String userCheckout(HttpServletRequest request) {
+    	String userName = request.getParameter("userName");
+    	List<UserEntity> userList = userServiceImpl.findUsersByUserName(userName);
+    	if(userList == null || userList.isEmpty())
+    		return "true";
+    	return "false";
     }
 
 }

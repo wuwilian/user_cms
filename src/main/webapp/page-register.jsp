@@ -15,21 +15,15 @@
 		
 		<!-- Import google fonts - Heading first/ text second -->
         <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />
-        <!--[if lt IE 9]>
-<link href="http://fonts.useso.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
-<link href="http://fonts.useso.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
-<link href="http://fonts.useso.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
-<link href="http://fonts.useso.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
-<![endif]-->
 
 		<!-- Favicon and touch icons -->
-		<link rel="shortcut icon" href="<%=path%>/resources/assets/ico/favicon.ico" type="image/x-icon" /> 
+		<link rel="shortcut icon" href="<%=path%>/resources/assets/ico/favicon.ico" type="image/x-icon" />
 
 	    <!-- Css files -->
 	    <link href="<%=path%>/resources/assets/css/bootstrap.min.css" rel="stylesheet">		
-		<link href="<%=path%>/resources/assets/css/jquery.mmenu.css" rel="stylesheet">		
+		<link href="<%=path%>/resources/assets/css/jquery.mmenu.css" rel="stylesheet">			
 		<link href="<%=path%>/resources/assets/css/font-awesome.min.css" rel="stylesheet">
-		<link href="<%=path%>/resources/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">			    
+		<link href="<%=path%>/resources/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">			   
 	    <link href="<%=path%>/resources/assets/css/style.min.css" rel="stylesheet">
 		<link href="<%=path%>/resources/assets/css/add-ons.min.css" rel="stylesheet">
 		<style>
@@ -44,6 +38,7 @@
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	    <![endif]-->
 	</head>
+
 </head>
 
 <body>
@@ -51,61 +46,73 @@
 		<div class="row">
 			<div id="content" class="col-sm-12 full">
 				<div class="row">
+				
 					<div class="login-box">
 					
 						<div class="header">
-						Login to Proton
-						</div>
-						<div class="text-center">
-							<li><a href="" class="fa fa-facebook facebook-bg"></a></li>
-							<li><a href="" class="fa fa-twitter twitter-bg"></a></li>
-							<li><a href="" class="fa fa-linkedin linkedin-bg"></a></li>
-						</div>				
-					
-						<div class="text-with-hr">
-							<span>or</span>
+						Create new account
 						</div>
 					
-						<form class="form-horizontal login" action="<%=path%>/user/login" method="post">
+						<form name="register" class="form-horizontal register" action="index.html" method="post">
 						
 							<fieldset class="col-sm-12">
-								<div class="form-group">
+								<div class="form-group">							  	
 									<div class="controls row">
-										<div class="input-group col-sm-12">	
-											<input type="text" class="form-control" id="username" name="user_name" placeholder="Username or E-mail"/>
-											<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										<div class="input-group col-sm-12">
+											<input type="text" class="form-control" placeholder="Full Name" id="fullname"/>
 										</div>	
 									</div>
 								</div>
 							
-								<div class="form-group">
+								<div class="form-group">							  	
 									<div class="controls row">
-										<div class="input-group col-sm-12">	
-											<input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
-											<span class="input-group-addon"><i class="fa fa-key"></i></span>
+										<div class="input-group col-sm-12">
+											<input type="text" class="form-control" placeholder="Email Address" id="username"/>
+										</div>	
+									</div>
+								</div>
+							
+								<div class="form-group">							  	
+									<div class="controls row">
+										<div class="input-group col-sm-12">
+											<input type="text" class="form-control" placeholder="Username" id="username"/>
+										</div>	
+									</div>
+								</div>
+							
+								<div class="form-group">							  	
+									<div class="controls row">
+										<div class="input-group col-sm-12">
+											<input type="password" class="form-control" placeholder="Password" id="password"/>
 										</div>	
 									</div>
 								</div>
 
 								<div class="confirm">
-									<input type="checkbox" name="remember"/>
-									<label for="remember">Remember me</label>
+									<input type="checkbox" name="agree"/>
+									<label for="agree">I agree to <a href="page-register.html#">Term of Use</a></label>
 								</div>	
 
-								<div class="row">
 							
-									<button type="submit" class="btn btn-lg btn-primary col-xs-12">Login</button>
+								<div class="row">
+
+									<button type="submit" class="btn btn-primary btn-lg col-xs-12">Create Account!</button>
 							
 								</div>
-								
+							
+								<div class="text-with-hr">
+									<span>or use your another account</span>
+								</div>
+							
 							</fieldset>	
 
-						</form>
+						</form>			
 					
-						<a class="pull-left" href="page-login.jsp#">Forgot Password?</a>
-						<a class="pull-right" href="<%=path%>/page-register.jsp">Sign Up!</a>
-					
-						<div class="clearfix"></div>				
+						<div class="text-center">
+							<li><a href="" class="fa fa-facebook facebook-bg"></a></li>
+							<li><a href="" class="fa fa-twitter twitter-bg"></a></li>
+							<li><a href="" class="fa fa-linkedin linkedin-bg"></a></li>
+						</div>				
 						
 					</div>
 				</div><!--/row-->
@@ -113,7 +120,7 @@
 			</div>	
 			
 		</div><!--/row-->		
-	
+		
 		
 		<div id="usage-blank">
 			<ul>
@@ -152,15 +159,18 @@
 						</div>
 					</div>			
 					<div class="desc">50TB of 50TB</div>
-				</li>
+				</li>				
 			</ul>	
 		</div>			
 		
 	</div><!--/container-->
 		
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-2.1.1.min.js'>"+"<"+"/script>");
-		</script>
+
+	<script src="<%=path%>/resources/assets/js/jquery-2.1.1.min.js"></script>
+
+	<script src="<%=path%>/resources/assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="<%=path%>/resources/assets/js/bootstrap.min.js"></script>	
+	
 	<!-- theme scripts -->
 	<script src="<%=path%>/resources/assets/js/SmoothScroll.js"></script>
 	<script src="<%=path%>/resources/assets/js/jquery.mmenu.min.js"></script>

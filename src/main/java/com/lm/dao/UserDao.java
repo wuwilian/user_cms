@@ -1,6 +1,7 @@
 package com.lm.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -35,6 +36,20 @@ public class UserDao implements UserMapper {
 		session.commit();
 		session.close();
 		return count;
+	}
+	
+	public UserEntity getUserByNameAndPassword(UserEntity user) {
+		SqlSession session = MyBatisUtils.openSession();
+		UserEntity loginUser = session.selectOne("getUserByNameAndPassword", user);
+		session.commit();
+		session.close();
+		return loginUser;
+	}
+	
+	public List<UserEntity> findUsersByUserName(String userName) {
+		SqlSession session = MyBatisUtils.openSession();
+		List<UserEntity> userList = session.selectList("findUsersByUserName", userName);
+		return userList;
 	}
 	
 }

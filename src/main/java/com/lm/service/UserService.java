@@ -12,4 +12,8 @@ public interface UserService {
 	List<UserEntity> getUserEntities();
 	
 	UserEntity insertUserEntity(UserEntity userEntity);
+	
+	UserEntity getUserByNameAndPassword(UserEntity user);
+	
+	List<UserEntity> findUsersByUserName(String userName);
 }

@@ -11,4 +11,8 @@ public interface UserMapper {
 	List<UserEntity> getUserEntities();
 	
 	int insertUser(UserEntity userEntity);
+	
+	UserEntity getUserByNameAndPassword(UserEntity user);
+
+	List<UserEntity> findUsersByUserName(String userName);
 }

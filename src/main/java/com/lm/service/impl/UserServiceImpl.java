@@ -40,4 +40,11 @@ public class UserServiceImpl implements UserService {
 		return getUserEntityById(userEntity.getUserId());
 	}
 
+	public UserEntity getUserByNameAndPassword(UserEntity user) {
+		return this.userDao.getUserByNameAndPassword(user);
+	}
+	
+	public List<UserEntity> findUsersByUserName(String userName) {
+		return this.userDao.findUsersByUserName(userName);
+	}
 }

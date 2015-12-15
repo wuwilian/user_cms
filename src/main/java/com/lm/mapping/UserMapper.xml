@@ -12,7 +12,7 @@
 	</resultMap>
 	
 	<select id="getUserEntityById" parameterType="String" resultMap="userEntityMapper">
-		select * from user where userid=#{param1}   
+		select * from user where userId=#{param1}   
 	</select>
 	
 	<select id="getUserEntities" resultMap="userEntityMapper">
@@ -23,5 +23,13 @@
 		insert into user(userId,userName,password,sex,email) 
 		values(#{userId},#{userName},#{password},#{sex},#{email})
 	</insert>
+	
+	<select id="getUserByNameAndPassword" parameterType="UserEntity" resultMap="userEntityMapper">
+		select * from user where userName=#{userName} and password=#{password}
+	</select>
+	
+	<select id="findUsersByUserName" parameterType="String" resultMap="userEntityMapper">
+		select * from user where userName=#{userName}
+	</select>
 	
 </mapper>
